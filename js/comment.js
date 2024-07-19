@@ -1,5 +1,5 @@
-import {getRandomInteger} from '../js/generateRandom.js';
-import {message} from '../js/main.js';
+import {getRandomInteger} from './generateRandom.js';
+import {message} from './generateRandom.js';
 
 const getRandomArrayElement = (items) =>
   items[getRandomInteger(0, items.length - 1)];
@@ -19,5 +19,7 @@ const createMessage = () => Array.from(
   () => getRandomArrayElement(message),
 ).join('.');
 
+export {getRandomInteger};
 export {generateRandomId};
 export {createMessage};
+export {getRandomArrayElement};
