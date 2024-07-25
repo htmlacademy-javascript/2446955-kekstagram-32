@@ -1,6 +1,4 @@
-import {generateThumbnails} from './picture.js';
 import {getPictures} from './generateRandom.js';
+import {renderGallery} from './gallery.js';
 
-getPictures();
-
-generateThumbnails(getPictures());
+renderGallery(getPictures);
