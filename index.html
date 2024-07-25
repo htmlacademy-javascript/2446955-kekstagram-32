@@ -10,6 +10,8 @@
   <script type="module" src="/js/generateRandom.js"></script>
   <script type="module" src="/js/comment.js"></script>
   <script type="module" src="/js/picture.js"></script>
+  <script type="module" src="/js/bigSize.js"></script>
+  <script type="module" src="/js/gallery.js"></script>
   <title>Кекстаграм</title>
 </head>
 
@@ -210,6 +212,15 @@
       </p>
     </a>
   </template>
+
+  <li class="social__comment">
+    <img
+      class="social__picture"
+      src="{{аватар}}"
+      alt="{{имя комментатора}}"
+      width="35" height="35">
+    <p class="social__text">{{текст комментария}}</p>
+  </li>
 
   <!-- Сообщение с ошибкой загрузки изображения -->
   <template id="error">
