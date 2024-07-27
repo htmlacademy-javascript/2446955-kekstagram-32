@@ -9,13 +9,13 @@ function getRandomInteger (a, b) {
   return Math.floor(result);
 }
 
-const descriptions = [
+const DESCRIPTIONS = [
   'А вот это снова я!',
   'Море сегодня тёплое',
   'Вот вам урожай на оценку',
   'Сегодня гуляла по ТЦ и встретила давнюю подругу'
 ];
-const message = [
+const MESSAGE = [
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально.',
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -23,7 +23,7 @@ const message = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
-export {message};
+export {MESSAGE};
 const NAMES = [
   'Иван',
   'Александр',
@@ -51,7 +51,7 @@ const createComment = () => ({
 const createPicture = (index) => ({
   id: index,
   url: `photos/${ index }.jpg`,
-  description: getRandomArrayElement(descriptions),
+  description: getRandomArrayElement(DESCRIPTIONS),
   likes: getRandomInteger(15, 200),
   comments: Array.from(
     {length: getRandomInteger(0, 30)},
