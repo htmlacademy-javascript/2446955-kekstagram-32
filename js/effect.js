@@ -1,5 +1,5 @@
 const Effect = {
-  DEFAULT: 'none',
+  DEFAULT: 'default',
   CHROME: 'chrome',
   SEPIA: 'sepia',
   MARVIN: 'marvin',
@@ -30,7 +30,7 @@ const effectToFilter = {
   }
 };
 
-const effectToSlideroptions = {
+const effectToSliderOptions = {
   [Effect.DEFAULT]: {
     min: 0,
     max: 100,
@@ -66,13 +66,14 @@ const effectToSlideroptions = {
 const modalElement = document.querySelector('.img-upload');
 const imageElement = modalElement.querySelector('.img-upload__preview img');
 const effectsElement = modalElement.querySelector('.effects');
-const sliderElement = modalElement.querySelector('effect-level__slider');
+const sliderElement = modalElement.querySelector('.effect-level__slider');
 const sliderContainerElement = modalElement.querySelector('.img-upload__effect-level');
+
 const effectLevelElement = modalElement.querySelector('.effect-level__value');
 
-let choseneffect = Effect.DEFAULT;
+let chosenEffect = Effect.DEFAULT;
 
-const isDefault = () => choseneffect === Effect.DEFAULT;
+const isDefault = () => chosenEffect === Effect.DEFAULT;
 
 const setImageStyle = () => {
   if (isDefault()) {
@@ -81,7 +82,7 @@ const setImageStyle = () => {
   }
 
   const {value} = effectLevelElement;
-  const {style, unit} = effectToFilter[choseneffect];
+  const {style, unit} = effectToFilter[chosenEffect];
   imageElement.style.filter = `${style}(${value}${unit})`;
 };
 
@@ -125,13 +126,13 @@ const setSlider = () => {
   if (isDefault()) {
     hideSlider();
   } else {
-    updateSlider(effectToSlideroptions[choseneffect]);
+    updateSlider(effectToSliderOptions[chosenEffect]);
     showSlider();
   }
 };
 
 const setEffect = (effect) => {
-  choseneffect = effect;
+  chosenEffect = effect;
   setSlider();
   setImageStyle();
 };
@@ -145,7 +146,7 @@ const onEffectChange = (evt) => {
 };
 
 const init = () => {
-  createSlider(effectToSlideroptions[choseneffect]);
+  createSlider(effectToSliderOptions[chosenEffect]);
   effectsElement.addEventListener('change', onEffectChange);
 };
 
