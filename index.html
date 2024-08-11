@@ -15,6 +15,8 @@
   <script type="module" src="/js/form.js"></script>
   <script type="module" src="/js/scale.js"></script>
   <script type="module" src="/js/effect.js"></script>
+  <script type="module" src="/js/api.js"></script>
+  <script type="module" src="/js/message.js"></script>
   <title>Кекстаграм</title>
 </head>
 
@@ -216,14 +218,16 @@
     </a>
   </template>
 
-  <li class="social__comment">
-    <img
-      class="social__picture"
-      src="{{аватар}}"
-      alt="{{имя комментатора}}"
-      width="35" height="35">
-    <p class="social__text">{{текст комментария}}</p>
-  </li>
+  <template id="comment">
+    <li class="social__comment">
+      <img
+        class="social__picture"
+        src="{{аватар}}"
+        alt="{{имя комментатора}}"
+        width="35" height="35">
+      <p class="social__text">{{текст комментария}}</p>
+    </li>
+  </template>
 
   <!-- Сообщение с ошибкой загрузки изображения -->
   <template id="error">

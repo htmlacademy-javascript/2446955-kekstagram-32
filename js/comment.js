@@ -1,8 +1,6 @@
 import {getRandomInteger} from './generateRandom.js';
 import {MESSAGE} from './generateRandom.js';
-
-const getRandomArrayElement = (items) =>
-  items[getRandomInteger(0, items.length - 1)];
+import { getRandomArrayElement } from './generateRandom.js';
 
 const createIdGenerator = () => {
   let numberId = 0;
@@ -22,4 +20,3 @@ const createMessage = () => Array.from(
 export {getRandomInteger};
 export {generateRandomId};
 export {createMessage};
-export {getRandomArrayElement};
