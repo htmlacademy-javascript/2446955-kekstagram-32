@@ -14,10 +14,9 @@ const createThumbnail = ({comments, description, likes, url, id}) => {
 
 const renderThumbnails = (pictures, container) => {
   const fragment = document.createDocumentFragment();
-
   pictures.forEach((picture) => {
-    const thumbNail = createThumbnail(picture);
-    fragment.append(thumbNail);
+    const thumbnail = createThumbnail(picture);
+    fragment.append(thumbnail);
   });
   container.append(fragment);
 };

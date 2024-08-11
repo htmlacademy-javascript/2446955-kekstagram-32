@@ -98,15 +98,15 @@ const onSliderUpdate = () => {
   setImageStyle();
 };
 
-const createSlider = ({min, max, step}) => {
+const createSlider = ({ min, max, step }) => {
   noUiSlider.create(sliderElement, {
-    range: {min, max},
+    range: { min, max },
     step,
     start: max,
     connect: 'lower',
     format: {
       to: (value) => Number(value),
-      from: (value) => Number(value)
+      from: (value) => Number(value),
     }
   });
   sliderElement.noUiSlider.on('update', onSliderUpdate);
