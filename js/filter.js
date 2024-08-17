@@ -36,7 +36,9 @@ const setOnFilterClick = (callback) => {
       return;
     }
 
-    filterElement.querySelector('.img-filters__button--active').classList.remove('img-filters__button--active');
+    filterElement
+      .querySelector('.img-filters__button--active')
+      .classList.remove('img-filters__button--active');
     clickedButton.classList.add('img-filters__button--active');
     currentFilter = clickedButton.id;
     callback(getFilteredPictures());

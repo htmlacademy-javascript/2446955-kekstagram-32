@@ -20,7 +20,6 @@ try {
   const debouncedRenderGallery = debounce(renderGallery);
   initFilter(data, debouncedRenderGallery);
   renderGallery(getFilteredPictures);
-  renderGallery(data);
 } catch {
   showAlert();
 }

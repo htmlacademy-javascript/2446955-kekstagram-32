@@ -15,8 +15,6 @@ const createThumbnail = ({id, url, description, likes, comments}) => {
 
 const renderThumbnails = (pictures, container) => {
   const fragment = document.createDocumentFragment();
-  // eslint-disable-next-line no-console
-  console.log(pictures);
   Array.from(pictures).forEach((picture) => {
     const thumbnail = createThumbnail(picture);
     fragment.append(thumbnail);

@@ -7,22 +7,6 @@ const getRandomInteger = (min, max) => {
   return Math.floor(Math.random() * (upper - lower + 1) + lower);
 };
 
-const getUniqueRandomInteger = (min, max) => {
-  const uniqueValues = [];
-  return function () {
-    let currentValue = getRandomInteger(min, max);
-    const rangeOfValues = max - min + 1;
-    if (uniqueValues.length >= rangeOfValues) {
-      throw new Error(`Перебраны все числа из диапазона от ${min} до ${max}`);
-    }
-    while(uniqueValues.includes(currentValue)) {
-      currentValue = getRandomInteger (min, max);
-    }
-    uniqueValues.push(currentValue);
-    return currentValue;
-  };
-};
-
 const getRandomArrayElement = (elements) => elements[getRandomInteger(0, elements.length - 1)];
 
 const DESCRIPTIONS = [
@@ -101,4 +85,4 @@ const debounce = (callback, timeoutDelay = 500) => {
   };
 };
 
-export {getRandomInteger, getRandomArrayElement, getUniqueRandomInteger, getPictures, showAlert, debounce};
+export {getRandomInteger, getRandomArrayElement, getPictures, showAlert, debounce};

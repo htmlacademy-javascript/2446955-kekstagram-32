@@ -17,6 +17,5 @@ const createMessage = () => Array.from(
   () => getRandomArrayElement(MESSAGE),
 ).join('.');
 
-export {getRandomInteger};
 export {generateRandomId};
 export {createMessage};

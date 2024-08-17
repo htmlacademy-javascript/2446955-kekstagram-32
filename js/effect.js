@@ -1,5 +1,5 @@
 const Effect = {
-  DEFAULT: 'default',
+  DEFAULT: 'none',
   CHROME: 'chrome',
   SEPIA: 'sepia',
   MARVIN: 'marvin',
@@ -34,33 +34,40 @@ const effectToSliderOptions = {
   [Effect.DEFAULT]: {
     min: 0,
     max: 100,
-    step: 1
+    step: 1,
+    start: 100,
   },
   [Effect.CHROME]: {
     min: 0,
     max: 1,
-    step: 0.1
+    step: 0.1,
+    start: 1,
   },
   [Effect.SEPIA]: {
     min: 0,
     max: 1,
-    step: 0.1
+    step: 0.1,
+    start: 1,
   },
   [Effect.MARVIN]: {
     min: 0,
     max: 100,
-    step: 1
+    step: 1,
+    start: 100,
   },
   [Effect.PHOBOS]: {
     min: 0,
     max: 3,
-    step: 0.1
+    step: 0.1,
+    start: 3,
   },
   [Effect.HEAT]: {
     min: 1,
     max: 3,
-    step: 0.1
-  }
+    step: 0.1,
+    start: 3,
+  },
+  connect: 'lower'
 };
 
 const modalElement = document.querySelector('.img-upload');
@@ -70,6 +77,8 @@ const sliderElement = modalElement.querySelector('.effect-level__slider');
 const sliderContainerElement = modalElement.querySelector('.img-upload__effect-level');
 
 const effectLevelElement = modalElement.querySelector('.effect-level__value');
+
+effectLevelElement.value = effectToSliderOptions.max;
 
 let chosenEffect = Effect.DEFAULT;
 
