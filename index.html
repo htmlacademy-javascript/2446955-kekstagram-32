@@ -3,9 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="vendor/nouislider/nouislider.css">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/generateRandom.js"></script>
+  <script type="module" src="/js/comment.js"></script>
+  <script type="module" src="/js/picture.js"></script>
+  <script type="module" src="/js/bigSize.js"></script>
+  <script type="module" src="/js/gallery.js"></script>
+  <script type="module" src="/js/form.js"></script>
+  <script type="module" src="/js/scale.js"></script>
+  <script type="module" src="/js/effect.js"></script>
+  <script type="module" src="/js/api.js"></script>
+  <script type="module" src="/js/message.js"></script>
+  <script type="module" src="/js/filter.js"></script>
   <title>Кекстаграм</title>
 </head>
 
@@ -30,11 +43,11 @@
       <section class="img-upload">
         <div class="img-upload__wrapper">
           <h2 class="img-upload__title  visually-hidden">Загрузка фотографии</h2>
-          <form class="img-upload__form" id="upload-select-image" autocomplete="off">
+          <form class="img-upload__form" id="upload-select-image" autocomplete="off" method = "post" action = "https://32.javascript.htmlacademy.pro/kekstagram" enctype = "multipart/form-data">
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
-              <input type="file" id="upload-file" class="img-upload__input  visually-hidden" name="filename" required>
+              <input type="file" id="upload-file" class="img-upload__input  visually-hidden" name="filename" accept="image/png, image/jpeg" required>
               <label for="upload-file" class="img-upload__label  img-upload__control">Загрузить</label>
             </fieldset>
 
@@ -119,7 +132,7 @@
                     <input class="text__hashtags" name="hashtags" placeholder="#ХэшТег">
                   </div>
                   <div class="img-upload__field-wrapper">
-                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..."></textarea>
+                    <textarea class="text__description" name="description" placeholder="Ваш комментарий..." data-pristine-maxlength="140" data-pristine-maxlength-message="Комментарий не может быть отправлен"></textarea>
                   </div>
                 </fieldset>
 
@@ -207,6 +220,17 @@
     </a>
   </template>
 
+  <template id="comment">
+    <li class="social__comment">
+      <img
+        class="social__picture"
+        src="{{аватар}}"
+        alt="{{имя комментатора}}"
+        width="35" height="35">
+      <p class="social__text">{{текст комментария}}</p>
+    </li>
+  </template>
+
   <!-- Сообщение с ошибкой загрузки изображения -->
   <template id="error">
     <section class="error">
@@ -233,6 +257,9 @@
         <h2 class="data-error__title">Не удалось загрузить данные</h2>
       </section>
     </template>
+
+    <script src="vendor/pristine/pristine.min.js"></script>
+    <script src="vendor/nouislider/nouislider.js"></script>
 
 </body>
 </html>
