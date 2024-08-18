@@ -5,6 +5,7 @@ import {
 } from './effect.js';
 
 const MAX_HASHTAG_COUNT = 5;
+const MAX_COMMENTS_LENGTH = 140;
 const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
 const FILE_TYPES = ['jpg', 'jpeg', 'png'];
 const ErrorText = {
@@ -118,6 +119,8 @@ const onFormSubmit = (callback) => {
   });
 };
 
+const hasValidLength = (value) => value.length <= MAX_COMMENTS_LENGTH;
+
 pristine.addValidator(
   hashtagField,
   hasValidCount,
@@ -137,6 +140,14 @@ pristine.addValidator(
   hasValidTags,
   ErrorText.INVALID_PATTERN,
   2,
+  true
+);
+
+pristine.addValidator (
+  commentField,
+  hasValidLength,
+  ErrorText.INVALID_LENGTH,
+  1,
   true
 );
 

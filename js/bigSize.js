@@ -1,8 +1,8 @@
 const COMMENTS_PER_PORTION = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
-const commentShowCountElement = bigPictureElement.querySelector('.social__comment-show');
-const commentTotalCountElement = bigPictureElement.querySelector('.social__comment-total');
+const commentShowCountElement = bigPictureElement.querySelector('.social__comment-shown-count');
+const commentTotalCountElement = bigPictureElement.querySelector('.social__comment-total-count');
 const commentListElement = bigPictureElement.querySelector('.social__comments');
 const commentsLoaderElement = bigPictureElement.querySelector('.comments-loader');
 const bodyElement = document.querySelector('body');

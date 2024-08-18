@@ -46,6 +46,7 @@ const setOnFilterClick = (callback) => {
 };
 
 const init = (loadedPictures, callback) => {
+  callback(loadedPictures);
   filterElement.classList.remove('img-filters--inactive');
   pictures = [...loadedPictures];
   setOnFilterClick(callback);
