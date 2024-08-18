@@ -1,7 +1,7 @@
 import { renderGallery } from './gallery.js';
 import {getData, sendData} from './api.js';
 import {onFormSubmit, hideModal} from './form.js';
-import { showAlert, debounce } from './generateRandom.js';
+import { showAlert, debounce } from './alert.js';
 import {showErrorMessage, showSuccessMessage} from './message.js';
 import { init as initFilter } from './filter.js';
 
